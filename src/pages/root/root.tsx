@@ -1,32 +1,26 @@
 // Подключение библиотек
-import React from 'react';
+import React, { FC } from 'react';
+import { Outlet } from 'react-router-dom';
+
+// Подключение компонентов
+import Header from 'components/header/header';
+import Footer from 'components/footer/footer';
+import InputData from 'components/input-data/input-data';
 
 // Подключение таблиц стилей и функций
-import './root.scss';
-import logo from 'assets/logo.svg';
+import styles from './root.module.scss';
 
-export async function loader() {
-  const str = 'test';
-  return { str };
-}
-
-export default function RootPage() {
+const RootPage: FC = () => {
   return (
-    <div className="App">
-      <header className="container-fluid App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main className={`container ${styles.container}`}>
+        <InputData />
+        <Outlet />
+      </main>
+      <Footer />
+    </>
   );
-}
+};
+
+export default RootPage;
