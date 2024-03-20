@@ -1,0 +1,43 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/animations';
+@use 'scss/varibles/color';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: color.$color-background-content;
+}
+
+.container {
+  padding-top: calc(var(--bs-gutter-x) * 0.4);
+  padding-bottom: calc(var(--bs-gutter-x) * 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__link {
+    @include reset.reset-link;
+    @include animations.animations-hover;
+    
+    display: block;
+    width: fit-content;
+  }
+
+  &__icon {
+    display: block;
+    width: 60px;
+  }
+
+  &__button {
+    @include reset.reset-button;
+    @include animations.animations-hover;
+  }
+
+  &__menu {
+    width: 35px;
+    height: auto;
+    fill: color.$color-text-main;
+  }
+}
