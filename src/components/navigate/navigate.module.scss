@@ -1,0 +1,50 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/animations';
+@use 'scss/varibles/color';
+@use 'bootstrap/scss/bootstrap';
+
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  &__content {
+    position: relative;
+    padding-top: calc(var(--bs-gutter-x) * 0.8);
+    padding-bottom: calc(var(--bs-gutter-x) * 0.8);
+    margin-left: auto;
+    background: color.$color-background-accent;
+
+    @include bootstrap.media-breakpoint-down(sm) {
+      padding-top: 55px;
+    }
+  }
+
+  &__list {
+    @include reset.reset-list;
+
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  &__button {
+    @include reset.reset-button;
+    @include animations.animations-hover;
+
+    width: fit-content;
+    position: absolute;
+    top: 13px;
+    left: -45px;
+
+    @include bootstrap.media-breakpoint-down(sm) {
+      left: auto;
+      right: 27px;
+    }
+  }
+
+  &__icon {
+    width: 35px;
+    height: auto;
+    fill: color.$color-text-main;
+  }
+}
