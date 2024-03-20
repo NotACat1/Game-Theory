@@ -3,15 +3,30 @@ import React, { FC } from 'react';
 import { RouterProvider, createHashRouter } from 'react-router-dom';
 
 // Подключение компонентов
-import RootPage, { loader as rootLoader } from 'pages/root/root';
+import RootPage from 'pages/root/root';
+import MaximinMinimaxSearchPage from 'pages/maximin-minimax-search/maximin-minimax-search';
+import RemovingDominatedStrategiesPage from 'pages/removing-dominated-strategies/removing-dominated-strategies';
+import RemovingWeakDominatedStrategiesPage from 'pages/removing-weak-dominated-strategies/removing-weak-dominated-strategies';
 
 // Создаем роутер
 const router = createHashRouter([
   {
     path: '/',
-    loader: rootLoader,
     element: <RootPage />,
-    //errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <MaximinMinimaxSearchPage />,
+      },
+      {
+        path: 'removing-dominated-strategies',
+        element: <RemovingDominatedStrategiesPage />,
+      },
+      {
+        path: 'removing-weak-dominated-strategies',
+        element: <RemovingWeakDominatedStrategiesPage />,
+      },
+    ],
   },
 ]);
 
