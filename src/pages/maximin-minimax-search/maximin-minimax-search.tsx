@@ -42,7 +42,7 @@ const MaximinMinimaxSearchPage: FC = () => {
   const classNameDataCell = `${styles.table__cell} ${styles.table__cell_data}`;
   const classNameDataCellActive = `${styles.table__cell} ${styles.table__cell_active}`;
 
-  if (matrix[0].length == 0) return;
+  if (matrix[0].length == 0) return null;
 
   return (
     <section>

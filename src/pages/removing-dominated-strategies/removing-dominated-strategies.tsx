@@ -31,7 +31,7 @@ const RemovingDominatedStrategiesPage: FC = () => {
     remainingRows,
   } = useMemo(() => removeStrictlyDominatedStrategies(matrix), [matrix]);
 
-  if (matrix[0].length == 0) return;
+  if (matrix[0].length == 0) return null;
 
   const classNameDataCell = `${styles.table__cell} ${styles.table__cell_data}`;
 
