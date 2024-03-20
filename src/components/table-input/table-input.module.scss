@@ -1,0 +1,56 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/animations';
+@use 'scss/mixins/typography';
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+
+.container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+
+  th {
+    background-color: color.$color-background-content;
+    font-weight: bold;
+  }
+
+  &__cell {
+    @include typography.typography-button;
+
+    border: 1px solid color.$color-text-main;
+    font-family: fonts.$font-family-main;
+    color: color.$color-text-main;
+
+    &_vertical {
+      width: 1%;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    &_data {
+      min-width: 100px;
+    }
+  }
+
+  &__input {
+    @include reset.reset-input;
+    @include typography.typography-button;
+    @include animations.animations-link-hover;
+
+    width: 100%;
+    font-family: fonts.$font-family-main;
+    color: color.$color-text-main;
+    background-color: color.$color-background-accent;
+    padding: calc(var(--bs-gutter-x) * 0.3) calc(var(--bs-gutter-x) * 0.5);
+    border-radius: 8px;
+  }
+
+  th,
+  td {
+    padding: calc(var(--bs-gutter-x) * 0.25) calc(var(--bs-gutter-x) * 0.2);
+    text-align: center;
+  }
+}

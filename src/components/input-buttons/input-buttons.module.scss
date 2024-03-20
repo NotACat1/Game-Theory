@@ -1,0 +1,42 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/animations';
+@use 'scss/mixins/typography';
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+@use 'bootstrap/scss/bootstrap';
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--bs-gutter-x) * 0.4);
+
+  @include bootstrap.media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
+  &__button {
+    @include reset.reset-button;
+    @include animations.animations-link-hover;
+    @include typography.typography-button;
+
+    display: flex;
+    align-items: center;
+    gap: calc(var(--bs-gutter-x) * 0.4);
+    background-color: color.$color-background-accent;
+    border: 1px solid color.$color-text-main;
+    border-radius: 8px;
+    padding: calc(var(--bs-gutter-x) * 0.6) calc(var(--bs-gutter-x) * 1);
+    color: color.$color-text-main;
+    font-family: fonts.$font-family-main;
+
+    @include bootstrap.media-breakpoint-down(md) {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: auto;
+  }
+}
