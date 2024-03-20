@@ -1,18 +1,21 @@
 {
-  "name": "my-react-app",
+  "name": "game-theory",
   "version": "0.1.0",
   "private": true,
-  "description": "",
-  "homepage": "https://notacat1.github.io/РЕПОЗИТОРИЙ",
+  "description": "Добро пожаловать на сайт по алгоритмам теории игр! Здесь вы найдете увлекательные исследования и практические руководства по применению алгоритмов в игровой теории. Независимо от того, являетесь ли вы студентом, профессионалом или просто любителем игр, наш сайт предлагает информацию о стратегиях, методах оптимизации и решении игровых ситуаций. Погрузитесь в увлекательный мир алгоритмов и теории игр с нами!",
+  "homepage": "https://notacat1.github.io/Game-Theory",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NotACat1/РЕПОЗИТОРИЙ"
+    "url": "https://github.com/NotACat1/Game-Theory"
   },
-  "keywords": [],
+  "keywords": [
+    "Game Theory",
+    "Algorithms"
+  ],
   "author": "NotACat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NotACat1/РЕПОЗИТОРИЙ/issues"
+    "url": "https://github.com/NotACat1/Game-Theory/issues"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",

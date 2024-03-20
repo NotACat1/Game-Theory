@@ -1,0 +1,26 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/animations';
+@use 'scss/mixins/typography';
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+@use 'bootstrap/scss/bootstrap';
+
+.title {
+  @include reset.reset-text;
+  @include typography.typography-h1;
+
+  font-family: fonts.$font-family-main;
+  color: color.$color-text-main;
+
+  @include bootstrap.media-breakpoint-down(md) {
+    text-align: center;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: calc(var(--bs-gutter-x) * 0.8);
+}

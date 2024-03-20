@@ -1,0 +1,42 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/typography';
+@use 'scss/mixins/animations';
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+
+.container {
+  @include reset.reset-link;
+
+  padding: calc(var(--bs-gutter-x) * 0.8) calc(var(--bs-gutter-x) * 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--bs-gutter-x) * 0.4);
+
+  &__content {
+    @include typography.typography-paragraph;
+
+    color: color.$color-text-main;
+    font-family: fonts.$font-family-main;
+    border-radius: 8px 0 0 8px;
+
+    &_disable {
+      color: color.$color-text-disable;
+    }
+
+    &:not(&_disable) {
+      @include animations.animations-link-hover;
+    }
+
+    &_active {
+      background-color: aqua;
+      border-right: 3px solid color.$color-border-active;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: auto;
+  }
+}

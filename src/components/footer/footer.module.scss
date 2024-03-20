@@ -1,0 +1,40 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/animations';
+@use 'scss/mixins/typography';
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+
+.footer {
+  background: color.$color-background-content;
+}
+
+.container {
+  padding-top: calc(var(--bs-gutter-x) * 1.2);
+  padding-bottom: calc(var(--bs-gutter-x) * 1.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__copyright {
+    @include typography.typography-link;
+
+    color: color.$color-text-main;
+    font-family: fonts.$font-family-main;
+  }
+
+  &__list {
+    @include reset.reset-list;
+
+    display: flex;
+    gap: calc(var(--bs-gutter-x) * 0.55);
+  }
+
+  &__link {
+    @include reset.reset-link;
+    @include animations.animations-hover;
+  }
+
+  &__icon {
+    width: 25px;
+  }
+}

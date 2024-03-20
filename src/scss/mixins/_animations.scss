@@ -1,0 +1,36 @@
+@use '../varibles/transitions';
+@use '../varibles/color';
+
+@mixin animations-hover {
+  transition: transitions.$transition-opacity;
+  opacity: 1;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}
+
+@mixin animations-link-hover {
+  transition: transitions.$transition-background;
+  background-color: inherit;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: color.$color-background-active;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: color.$color-background-active;
+    }
+  }
+}

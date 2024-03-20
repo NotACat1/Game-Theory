@@ -1,0 +1,57 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/animations';
+@use 'scss/mixins/typography';
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+@use 'bootstrap/scss/bootstrap';
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--bs-gutter-x) * 0.65);
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--bs-gutter-x) * 0.45);
+  }
+
+  &__input {
+    @include reset.reset-input;
+    @include typography.typography-button;
+    @include animations.animations-link-hover;
+
+    font-family: fonts.$font-family-main;
+    color: color.$color-text-main;
+    background-color: color.$color-background-accent;
+    padding: calc(var(--bs-gutter-x) * 0.3) calc(var(--bs-gutter-x) * 0.5);
+    border-radius: 8px;
+  }
+
+  &__button {
+    @include reset.reset-button;
+    @include animations.animations-link-hover;
+    @include typography.typography-button;
+
+    display: flex;
+    align-items: center;
+    gap: calc(var(--bs-gutter-x) * 0.4);
+    background-color: color.$color-background-accent;
+    border: 1px solid color.$color-text-main;
+    border-radius: 8px;
+    padding: calc(var(--bs-gutter-x) * 0.4) calc(var(--bs-gutter-x) * .5);
+    color: color.$color-text-main;
+    font-family: fonts.$font-family-main;
+
+    @include bootstrap.media-breakpoint-down(md) {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: auto;
+  }
+}

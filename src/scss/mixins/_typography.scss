@@ -1,0 +1,27 @@
+// Миксин для настройки кастомной типографики
+@mixin typography-custom($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+// Типографика для абзацев
+@mixin typography-paragraph {
+  @include typography-custom(18px, 400, 27px);
+}
+
+@mixin typography-h1 {
+  @include typography-custom(24px, 500, 30px);
+}
+
+@mixin typography-h2 {
+  @include typography-custom(21px, 500, 28px);
+}
+
+@mixin typography-button {
+  @include typography-custom(16px, 400, 1.3);
+}
+
+@mixin typography-link {
+  @include typography-custom(16px, 400, 1);
+}

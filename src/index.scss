@@ -1,3 +1,12 @@
-.test {
-  color: #000;
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+
+#root {
+  background-color: color.$color-background-main;
+  font-family: fonts.$font-family-main;
+  color: color.$color-text-main;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
 }

@@ -1,0 +1,13 @@
+@use 'scss/mixins/reset';
+@use 'scss/mixins/typography';
+@use 'scss/varibles/color';
+@use 'scss/varibles/fonts';
+
+.container {
+  flex: 1 1 0;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--bs-gutter-x) * 1.5);
+}
