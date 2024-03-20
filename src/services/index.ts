@@ -2,14 +2,15 @@
 import { ThunkAction } from 'redux-thunk';
 
 // Импортирование Actions
-import { TExampleActions } from './actions/example';
+import { TMatrixActions } from './actions/matrix';
+import { TPageActions } from './actions/page';
 
 // Импортирование Actions
 import { rootReducer } from './reducers/';
 import { store } from './store';
 
 // Типизация всех экшенов приложения
-type TApplicationActions = TExampleActions;
+type TApplicationActions = TMatrixActions | TPageActions;
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof rootReducer>;
