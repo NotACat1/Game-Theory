@@ -34,3 +34,20 @@
   text-decoration: none;
   text-transform: none;
 }
+
+// сброс css свойств для input
+@mixin reset-input {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  line-height: normal;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
